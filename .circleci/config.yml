@@ -16,12 +16,15 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          dependencies: pytest>=7.2.1
           pkg-manager: pip
-          
+
+      - run:
+          name: test_Gibbs_Sampler2
+          command: python3 -m pip install pytest 
       - run:
           name: test_Gibbs_Sampler
           command: python3 test_Gibbs.Sampler.py -m pytest
+
 
 
 # Orchestrate jobs using workflows
