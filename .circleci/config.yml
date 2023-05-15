@@ -22,7 +22,7 @@ jobs:
 
       - run:
           name: test_Gibbs_Sampler
-          command: python3 test_Gibbs.Sampler.py -m pytest
+          command: pytest
 
       - persist_to_workspace:
           root: ~/project
