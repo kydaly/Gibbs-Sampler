@@ -16,16 +16,13 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pytest>=7.2.1
+          dependencies: pytest>=7.2.1
           pkg-manager: pip
           
       - run:
           name: test_Gibbs_Sampler
           command: python3 test_Gibbs.Sampler.py -m pytest
-      - persist_to_workspace:
-        root: ~/project
-        paths:
-          -.
+
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
