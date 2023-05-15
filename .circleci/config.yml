@@ -16,11 +16,10 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
+          pip-dependency-file: requirements.txt
           pkg-manager: pip
 
-      - run:
-          name: test_Gibbs_Sampler2
-          command: python3 -m pip install pytest 
+
       - run:
           name: test_Gibbs_Sampler
           command: python3 test_Gibbs.Sampler.py -m pytest
